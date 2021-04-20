@@ -18,18 +18,29 @@ const expensesApi = {
   getReports: async () => {
     try {
       // 👇 Replace this with call to API 👇
-      return [
-        {
-          date: new Date(),
-          description: "Pizza for a Coding Dojo session.",
-          value: 102,
+      const token = await window.auth0Client.getTokenSilently();
+      const options = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-        {
-          date: new Date(),
-          description: "Coffee for a Coding Dojo session.",
-          value: 42,
-        },
-      ];
+      };
+      const res = await fetch(`${window.env.API_URL}/reports`, options);
+      const json = await res.json();
+      return json;
+//       return [
+//         {
+//           date: new Date(),
+//           description: "Pizza for a Coding Dojo session.",
+//           value: 102,
+//         },
+//         {
+//           date: new Date(),
+//           description: "Coffee for a Coding Dojo session.",
+//           value: 42,
+//         },
+//       ];
       // 👆 Replace this with call to API 👆
     } catch (err) {
       console.log("Error getting reports", err);
