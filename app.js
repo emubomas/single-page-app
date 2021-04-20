@@ -10,7 +10,7 @@ import router from "./router";
     domain,
     client_id,
     redirect_uri,
-})();
+});
 
   
   
