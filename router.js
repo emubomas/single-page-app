@@ -16,6 +16,7 @@ const router = async () => {
     await window.auth0Client.handleRedirectCallback();
     window.history.replaceState({}, document.title, "/");
 }
+  
 //   if (new URLSearchParams(window.location.search).has("code")) {
 //     await window.auth0Client.handleRedirectCallback();
 //     window.history.replaceState({}, document.title, "/");
