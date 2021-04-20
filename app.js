@@ -11,12 +11,3 @@ import router from "./router";
     client_id,
     redirect_uri,
 });
-
-//   // handle user navigation
-//   window.addEventListener("hashchange", router);
-//   window.addEventListener("load", router);
-
-//   //handle user reload of browser
-//   if (sessionStorage.getItem("reload")) await router();
-//   sessionStorage.setItem("reload", "true");
-// })();
